@@ -1,6 +1,18 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome|zocial);
-/* zocial */
 
+/* PS: I create two set of media queries to avoid confusion
+       1) starter and end screen
+       2) main game screen 
+
+
+       I used z-index for 3 container
+       1) game starter screen
+       2) main game screen
+       3) game end result screen
+    
+*/
+
+/* zocial */
 [class*="zocial-"]:before {
   font-family: 'zocial', sans-serif;
 }
@@ -24,6 +36,7 @@ body {
   position: relative;
 }
 
+/* First Screen*/
 #zIndexStarter {
   position: absolute;
   width: 100%;
@@ -89,6 +102,7 @@ body {
   height: 100px;
 }
 
+/* Main game screen*/
 #zIndexContainer {
   position: absolute;
   background: white;
@@ -167,6 +181,7 @@ body {
   overflow: hidden;
 }
 
+/* Result Screen */
 #zIndexEnd {
   position: absolute;
   width: 100%;
@@ -517,12 +532,14 @@ body {
   }
 }
 
+/* Animation shake which is defined in animate.css */
 .shake {
   animation-duration: 2s;
 }
 
 /*  Media Goes Here   */
 
+/* for Main Game Screen*/
 @media screen and (max-width: 419px) {
   #score-data {
     margin-top: 5px;
@@ -554,6 +571,7 @@ body {
   }
 }
 
+/* For Main Game Screen*/
 @media screen and (min-width: 420px) and (max-width: 490px) {
   #score-data {
     margin-top: 5px;
@@ -583,9 +601,9 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  /*  Main Container  */
 }
 
+/* For Main Game Screen*/
 @media screen and (min-width: 491px) and (max-width: 680px) {
   #main-game-container {
     width: 95%;
@@ -624,6 +642,7 @@ body {
   }
 }
 
+/* For Main Game Screen*/
 @media screen and (min-width: 681px) and (max-width: 960px) {
   #main-game-container {
     width: 620px;
@@ -658,6 +677,7 @@ body {
   }
 }
 
+/* For Main Game Screen*/
 @media screen and (min-width: 960px) and (max-width: 1000px) {
   #main-game-container {
     width: calc(90%);
@@ -701,6 +721,7 @@ body {
   }
 }
 
+/* For Main Game Screen*/
 @media screen and (min-width: 1001px) {
   #main-game-container {
     width: calc(890px);
@@ -744,6 +765,7 @@ body {
   }
 }
 
+/* For First Starter Screen and Main Container and End Result Screen */
 @media screen and (max-width: 430px) {
   #game-header,
   #game-title,
@@ -854,6 +876,7 @@ body {
   }
 }
 
+/* For Game Starter Screen and End Result Screen */
 @media screen and (min-width: 431px) and (max-width: 600px) {
   #game-header,
   #game-title,
@@ -1000,6 +1023,7 @@ body {
   }
 }
 
+/* For Game Starter Screen and End Result Screen */
 @media screen and (min-width: 1001px) and (max-width: 1369px) {
   #game-header,
   #game-title,
@@ -1043,6 +1067,7 @@ body {
   }
 }
 
+/* For Game Starter Screen and End Result Screen */
 @media screen and (min-width: 1350px) and (max-width: 1600px) {
   #game-header,
   #game-title,
@@ -1087,6 +1112,7 @@ body {
   }
 }
 
+/* For Game Starter Screen and End Result Screen */
 @media screen and (min-width: 1601px) {
   #score-header {
     height: auto;

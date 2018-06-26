@@ -1,5 +1,31 @@
+/** Formated Document by VS code javascript formatter -> Prettier by Esben Petersen
+ * 
+ * https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+ * 
+ * PS: I gave descriptive name of variables as much i can and doesn't care
+ *      about name length and still if anything confuse you please write below
+ *      in this para so we can change it
+ *
+ *  Confused Names: (goes here)
+ *
+ *
+ *
+ */
+
+/*****  animationEnd method from author of animate.css  ********************
+*
+* URI: https://github.com/daneden/animate.css
+*
+* This function expression basically find which type of
+* animationevent this browser vendors supports.
+*
+* NOTE: Only works on animation keyframe not on direct
+* transition and transform , you have to make using animation
+* name and keyframes. I tried :)
+*
+*/
 var animationEnd = (function(el) {
-  console.log(el);
+  //console.log(el);
   var animations = {
     animation: "animationend",
     OAnimation: "oAnimationEnd",
@@ -13,6 +39,22 @@ var animationEnd = (function(el) {
     }
   }
 })(document.createElement("div"));
+
+/* ********************************************************************  */
+
+/**** All required variables are goes here  *******************************
+ *
+ *  icons -> all icons which we applied when use click and display
+ *  cards -> list of card objects
+ *  startTimerCount -> flag for timer function
+ *  counter -> for keeping score
+ *  readyToInput -> input sync purpose when multiple cards hits
+ *  moves -> user moves
+ *  minutes , seconds -> user time
+ *  intervalVar -> keep object of setInterval and use it in clearInterval
+ *  local_storage_objects -> keep track of local storage card objects
+ *
+ * ****************************************************************            */
 
 var icons = [];
 
@@ -40,12 +82,26 @@ var open_cards_track = [];
 
 var local_storage_objects = [];
 
+/********************************************************************************* */
+
+/*  Document Ready Function */
 $(function() {
   /* parentElement.addClass('animated zoomIn')
         parentElement.on(animationEnd , function(e){
           parentElement.removeClass('animated zoomIn')
-//          console.log("gellpo world")
+  //          console.log("gellpo world")
         }); */
+
+  /*********** When document loads then get some refrence of some UI elements   ********
+   *
+   * timerDisplay -> define time on game screen
+   * moversDisplay -> define moves on game screen
+   * starOne , starTwo , starThree -> define stars on game screen
+   * formatedTimeSeconds , formatedTimeMinutes -> formate time as per seconds and minutes
+   * scoreGetsToZeroInterval -> NOT USED , but for future refrence (to create value dec effect)
+   *
+   * */
+
   let timerDisplay = $("#timer-data");
   let movesDisplay = $("#moves-data");
 
@@ -53,11 +109,17 @@ $(function() {
   let starTwo = $("#star-two");
   let starThree = $("#star-three");
   let resetButton = $("#reset-button");
-  console.log(movesDisplay, starOne, starTwo, starThree, resetButton);
+  //console.log(movesDisplay, starOne, starTwo, starThree, resetButton);
   let formatedTimeSeconds = "00";
   let formatedTimeMinutes = "00";
   let scoreGetsToZeroInterval = null;
 
+  /**** Generate Random icons set for game everytime
+   *
+   *  input: void
+   *  return: new set of icons (string of list) list
+   *
+   *  ************/
   function getRandomIcons() {
     let icons = [];
 
@@ -128,9 +190,16 @@ $(function() {
     return icons;
   }
 
+  /****  Initialize for first game */
   icons = getRandomIcons();
-  console.log(icons);
+  //console.log(icons);
 
+  /***    Read local storage cards  **************
+   *
+   *  input: void
+  *   output: list of saved local storage card objects
+   *
+   ****************************************************/
   function readStorageObjects() {
     let local_storage_objects = [];
     if (window.localStorage) {
@@ -144,8 +213,18 @@ $(function() {
     return local_storage_objects;
   }
 
+  /*  Init first time  */
   local_storage_objects = readStorageObjects();
 
+  /**  Sort objects of retrival local storage card objects  **********
+   *   or any card objects list
+   *
+   *  input: void
+   *  return: sorted card objects list
+   *  method: optimize bubble sort
+   *  future method: merge / quick sort (TODO)
+   *
+   **********************************************************************/
   function sortObjects(storage_objects) {
     let counter = storage_objects.length;
     for (let index = 0; index < storage_objects.length; index++) {
@@ -164,6 +243,20 @@ $(function() {
 
     return storage_objects;
   }
+
+  /********* Insert new object in local_storage variable *************
+   *    filter that list if valid or met criteria then
+   *    insert that object otherwise not
+   *
+   *  Criteria:  check moves (if same check minutes (if same check seconds))
+   *
+   *  NOTE:  NOT IN LOCAL STORAGE
+   *  Input: list of comparable card objects , new object (user current score)
+   *  Return: modified list
+   *  Max Iteration: 6 (Top 6 card objects or scores or players)
+   *
+   *
+   ************************************************************************/
 
   function insertObjects(storage_objects, newObject) {
     let index = 0;
@@ -197,6 +290,13 @@ $(function() {
     return storage_objects;
   }
 
+  /**** Store local storage card objects in actual local storage of browser
+   *
+   *  WARNING: DOES NOT CHECK FOR IF BROWSER HAS LOCAL STORAGE OR NOT
+   *
+   *  Future: modify this method for more robust cases (TODO)
+   *
+   */
   function storeObjectsLocalStorage(storage_objects) {
     for (let index = 0; index < storage_objects.length; index++) {
       window.localStorage.setItem(
@@ -206,6 +306,14 @@ $(function() {
     }
   }
 
+  /******   Score gets zero function
+   *
+   *     NOT USED CURRENTLY USE IN FUTURE
+   *
+   *  effect: decement value at one second
+   *
+   *
+   */
   function scoreGetsToZero() {
     if (moves > 0) movesDisplay.text(moves--);
     else {
@@ -215,11 +323,39 @@ $(function() {
     }
   }
 
+  /***  Set click event on reset button of game ui and call ***
+  *
+  *    reset game function
+  *
+  * **************************************************************/
   resetButton.on("click", function(e) {
     e.stopPropagation();
     resetGame(e);
   });
 
+  /**   RESET THE WHOLE GAME ****************************************
+   *
+   *    Main Benifit: it doesn't  remove any UI part it will make
+   *                  in stable part of the reset game
+   *
+   *   1) reset the ui part
+   *      it wil clsoe all card if any opens (with transition)
+   *      reset the ui timer value
+   *      reset the ui moves value
+   *      redisplay all stars
+   *      reset button turns into loading and after completion time of
+   *          this function it gives back control to user for again
+   *           reset or replay the game
+   *      lock the trophy or getway of scoreboard again
+   *
+   *    2) for logical part
+   *        reset all mentioned above main varirables
+   *        reset the cards internal data (means shuffle)
+   *
+   *    Input: event Object for propagation
+   *    Return: void
+   *
+   */
   function resetGame(e) {
     e.stopPropagation();
     readyToInput = false;
@@ -233,11 +369,11 @@ $(function() {
     //scoreGetsToZeroInterval = setInterval(scoreGetsToZero , 1);
     movesDisplay.text(moves);
 
-    console.log(cards);
+    //console.log(cards);
 
     startTimerCount = true;
 
-    console.log("stop reset game");
+    //console.log("stop reset game");
 
     clearInterval(intervalVar);
     timerDisplay.text("00 : 00");
@@ -271,7 +407,7 @@ $(function() {
     //childelement.attr('data-prev-class' , 'zocial-' + icons[cards[childelement.attr('data-no')].no - 1] );
 
     icons = getRandomIcons();
-    console.log(icons);
+    //console.log(icons);
 
     if (open_cards_track.length >= 1) {
       let lastElement = $(
@@ -357,6 +493,12 @@ $(function() {
     readyToInput = true;
   }
 
+  /***  Timer function is used for setInterval ******
+   *
+   *  Input: Void
+   *  Return: Void
+   *
+   */
   function timer() {
     seconds += 1;
 
@@ -380,7 +522,13 @@ $(function() {
     timerDisplay.text(formatedTimeMinutes + " : " + formatedTimeSeconds);
   }
 
-  /* StackOverflow  https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array */
+  /* shuffle function shuffle the array values **********
+  *
+  * URI:  StackOverflow  https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+  * Input: array list of numbers
+  * Output: shuffled list of inputed numbers
+  *
+  ****************************************************/
   function shuffle(array) {
     var currentIndex = array.length,
       temporaryValue,
@@ -401,6 +549,9 @@ $(function() {
     return array;
   }
 
+  /****  Code for z-index set when user view the ***********
+   *     starter screen */
+
   $("#score-header").css("visibility", "hidden");
   $("#main-game-container").css("visibility", "hidden");
   $("#game-header").addClass("animated pulse");
@@ -408,6 +559,12 @@ $(function() {
     e.stopPropagation();
     $(this).removeClass("animated pulse");
   });
+
+  /********************************************************* */
+
+  /*******Set z-index of Game Screen and user *******************
+   *      clicks on start button
+   */
 
   $("#start-button").on("click", function(e) {
     e.stopPropagation();
@@ -423,11 +580,16 @@ $(function() {
     });
   });
 
+  /**************************************************************** */
+
+  /*  get the refrence of the container and render main game UI */
   let ulElement = $("#container-cards");
   let array1 = shuffle([0, 1, 2, 3, 4, 5, 6, 7]);
   let array2 = shuffle([0, 1, 2, 3, 4, 5, 6, 7]);
 
   for (let i = 0; i < 16; i++) {
+    /** Create the UI Part */
+
     let parentElement = $('<div class="card" id="card-' + i + '" ></div>');
     let element = $('<li class="class-li" id="" ></li>');
     let childelement = $('<p class="class-i" data-no="' + i + '"></p>');
@@ -453,8 +615,10 @@ $(function() {
       "data-prev-class",
       "zocial-" + icons[cards[childelement.attr("data-no")].no - 1]
     );
+
+    /* Add event listener on each card */
     parentElement.on("click", function(e) {
-      console.log("five times called by noew");
+      //console.log("called this function by noew");
 
       e.stopPropagation();
       if (startTimerCount) {
@@ -468,6 +632,7 @@ $(function() {
       ) {
         movesDisplay.text(++moves);
 
+        /* Generate how many stars user got */
         if (moves === 30) {
           starThree.addClass("animated fadeOut");
           starThree.one(animationEnd, function(e) {
@@ -490,7 +655,23 @@ $(function() {
             $(this).removeClass("animated fadeout");
           });
         }
+        /************************************************ */
 
+        /**  First Step of Game transition  ******************
+         *
+         *  Method used in game: state transition
+         *  First Click -> card insert in two_cards_track array variable
+         *  Second Click -> card insert in two_cards_track array variable
+         *            and check if two are matched or not
+         *            if same card remains open
+         *            if not both are closed
+         *            and pop the elements from the two_cards_track array
+         *
+         * also both cards are inserted to cars open list for reset / replay
+         * event so we can close , shuffle  and reassign them when user click
+         * on reset / replay button and fires that event.
+         *
+         *  */
         if (two_cards_track.length < 1) {
           cards[$(this).children(".class-i").attr("data-no")].state = false;
 
@@ -574,6 +755,19 @@ $(function() {
                 ].state = true;
               }
 
+              /**   if user matches all cards then this will happern
+               *
+               *  aniamtion : background-transition and shake
+               *
+               *  reset/ replay button displays loading
+               *
+               *  trophy is unlocked and build the way to result pane
+               *
+               *  stores that data if
+               *  valid or broke the previous player / game
+               *  record to the local storage
+               *
+               */
               if (/*  moves === 2  */ counter === 16) {
                 clearInterval(intervalVar);
 
@@ -591,17 +785,17 @@ $(function() {
 
                   $("#container-cards").addClass("animated shake");
 
-                  console.log("hello world above there");
-                  var target = e.target || e.srcElement;
-                  console.log(target);
+                  //console.log("hello world above there");
+                  var target = e.target || e.srcElement; /** Debug purpose */
+                  //console.log(target);
 
                   $("#container-cards").one(animationEnd, function(e) {
                     e.stopPropagation();
-                    target = e.target || e.srcElement;
-                    console.log(target);
+                    target = e.target || e.srcElement; /** Debug purpose */
+                    //console.log(target);
 
                     $(this).removeClass("animated shake");
-                    console.log("hello world only here");
+                    //console.log("hello world only here");
 
                     if (window.localStorage) {
                       let timerData =
@@ -640,6 +834,7 @@ $(function() {
                       local_storage_objects = readStorageObjects();
                       //console.log(local_storage_objects , objectOfResult);
 
+                      /* This will set the UI Part of the Result Screen  */
                       for (
                         let index = 0;
                         index < local_storage_objects.length;
@@ -667,6 +862,7 @@ $(function() {
                       }
                     }
 
+                    /*  Trophy icon is appeard when user wins and also had animation */
                     $("#trophy-icon").addClass("fontawesome-trophy");
                     $("#trophy-icon").css("opacity", "1");
                     $("#trophy-icon").css("cursor", "pointer");
@@ -704,7 +900,7 @@ $(function() {
                     });
                   });
                 });
-                console.log(first, second);
+                //console.log(first, second);
               }
             }
           });
@@ -719,44 +915,3 @@ $(function() {
     });
   }
 });
-
-/*if (two_cards_track.length <2){
-
-      element.css( "transform" , "rotateX(-180deg)" )
-      childelement.css( "transform" , "rotateX(-360deg)" )
-      two_cards_track.push(this)
-      console.log(two_cards_track)
-      }
-
-      if (two_cards_track.length === 2){
-
-        let first = two_cards_track[0]
-        let second = two_cards_track[1]
-        two_cards_track.pop()
-        two_cards_track.pop()
-        if (cards[$(first).children('.class-i').attr('data-no')].no === cards[$(second).children('.class-i').attr('data-no')].no ){
-            $(first).on('click',function(){})
-            $(second).on('click',function(){})
-            counter += 2
-        }else{
-          let first_li = $(first).children('.class-li')
-          let first_i = $(first).children('.class-i')
-          let second_li = $(second).children('.class-li')
-          let second_i = $(second).children('.class-i')
-          console.log(second_li , second_i)
-          console.log(first_li , first_i)
-          first_li.css("transition-delay" , "1s")
-          first_i.css("transition-delay", "1s")
-          second_li.css("transition-delay" , "0s")
-          second_i.css("transition-delay", "0s")
-          first_li.css("transform" , "rotateX(0deg)")
-          first_i.css("transform" , "rotateX(-180deg)")
-          second_li.css("transform" , "rotateX(0deg)")
-          second_i.css("transform" , "rotateX(-180deg)")
-        }
-
-      }else{
-
-      }
-
-  });*/
