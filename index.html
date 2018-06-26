@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" href="css\animate.css">
+    <link rel="stylesheet" href="css\style.css">
+    <script src="js\sample.js"></script>
+
+</head>
+
+<body>
+    <section id="zIndexStarter">
+        <section id="game-header">
+            <section id="game-title">
+                <div id="game-title-div">
+                    <p title="made with ☕ 😄 🍕">Memory Game</p>
+                </div>
+            </section>
+            <section id="game-starter">
+                <section id="game-type-select" title="game characters credits">
+                    <div class="game-type-div">
+                        <a href="https://www.linkedin.com/in/yash-gandhi-61940b132/" target="blank" class="fontawesome-linkedin" title="linkedin"></a>
+                    </div>
+                    <div class="game-type-div">
+                        <a href="https://github.com/kontactr" class="fontawesome-github" target="blank" title="github"></a>
+
+                    </div>
+                    <div class="game-type-div">
+                        <a href="http://weloveiconfonts.com/" class="fontawesome-font" target="blank" title="fonts"></a>
+
+                    </div>
+                    <div class="game-type-div">
+                        <a href="https://emojipedia.org/" class="fontawesome-lightbulb" target="blank" title="play, win trophy to get scoreboard or replay"></a>
+
+                    </div>
+                </section>
+                <section id="game-start-type">
+                    <div id="game-start-button-div">
+                        <button id="start-button" title="start game">Start Button</button>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <section id="zIndexContainer">
+
+        <div id="main-game-container">
+            <section id="score-data">
+                <section id="timer" class="score-data-items">
+                    <P class="score-data-p" id="timer-data">00 : 00</P>
+                </section>
+                <section id="moves" class="score-data-items">
+                    <p class="score-data-p" id="moves-data">0</p>
+                </section>
+                <section id="stars" class="score-data-items">
+                    <p class="score-data-p">
+                        <span class="fontawesome-star" id="star-one"></span>
+                        <span class="fontawesome-star" id="star-two"></span>
+                        <span class="fontawesome-star" id="star-three"></span>
+                    </p>
+                </section>
+                <section id="result-buttons" class="score-data-items">
+                    <p class="score-data-p fontawesome-undo" id="reset-button" title="Reset / Replay Game"></p>
+                    <p id="trophy-icon" title="scoreboard is locked"></p>
+                </section>
+            </section>
+            <section id="container">
+                <ul id="container-cards">
+                </ul>
+            </section>
+        </div>
+    </section>
+
+
+    <section id="zIndexEnd">
+        <section id="score-header">
+            <section id="score-cards-container">
+                <section class="score-cards" id="score-card-1">
+                    <section class="score-cards-numbers">
+                        <p id="sc-rank-1">Rank</p>
+                    </section>
+                    <section class="score-cards-text">
+                        <section class="score-cards-text-time">
+                            <p id="sc-time-1">Time</p>
+                        </section>
+                        <section class="score-cards-text-moves-star">
+                            <p id="sc-moves-1" class="first-p">Moves</p>
+                            <p id="sc-stars-1" class="second-p">
+                                <span></span>&nbsp;
+                                <span></span>&nbsp;
+                                <span></span>
+                            </p>
+                        </section>
+                    </section>
+                </section>
+                <section class="score-cards" id="score-card-2">
+                    <section class="score-cards-numbers">
+                        <p id="sc-rank-2">Rank</p>
+                    </section>
+                    <section class="score-cards-text">
+                        <section class="score-cards-text-time">
+                            <p id="sc-time-2">Time</p>
+                        </section>
+                        <section class="score-cards-text-moves-star">
+                            <p id="sc-moves-2" class="first-p">Moves</p>
+                            <p id="sc-stars-2" class="second-p">
+                                <span></span>&nbsp;
+                                <span></span>&nbsp;
+                                <span></span>
+                            </p>
+                        </section>
+                    </section>
+                </section>
+                <section class="score-cards" id="score-card-3">
+                    <section class="score-cards-numbers">
+                        <p id="sc-rank-3">Rank</p>
+                    </section>
+                    <section class="score-cards-text">
+                        <section class="score-cards-text-time">
+                            <p id="sc-time-3">Time</p>
+                        </section>
+                        <section class="score-cards-text-moves-star">
+                            <p id="sc-moves-3" class="first-p">Moves</p>
+                            <p id="sc-stars-3" class="second-p">
+                                <span></span>&nbsp;
+                                <span></span>&nbsp;
+                                <span></span>
+                            </p>
+                        </section>
+                    </section>
+                </section>
+                <section class="score-cards" id="score-card-4">
+                    <section class="score-cards-numbers">
+                        <p id="sc-rank-4">Rank</p>
+                    </section>
+                    <section class="score-cards-text">
+                        <section class="score-cards-text-time">
+                            <p id="sc-time-4">Time</p>
+                        </section>
+                        <section class="score-cards-text-moves-star">
+                            <p id="sc-moves-4" class="first-p">Moves</p>
+                            <p id="sc-stars-4" class="second-p">
+                                <span></span>&nbsp;
+                                <span></span>&nbsp;
+                                <span></span>
+                            </p>
+                        </section>
+                    </section>
+                </section>
+                <section class="score-cards" id="score-card-5">
+                    <section class="score-cards-numbers">
+                        <p id="sc-rank-5">Rank</p>
+                    </section>
+                    <section class="score-cards-text">
+                        <section class="score-cards-text-time">
+                            <p id="sc-time-5">Time</p>
+                        </section>
+                        <section class="score-cards-text-moves-star">
+                            <p id="sc-moves-5" class="first-p">Moves</p>
+                            <p id="sc-stars-5" class="Second-p">
+                                <span></span>&nbsp;
+                                <span></span>&nbsp;
+                                <span></span>
+                            </p>
+                        </section>
+                    </section>
+                </section>
+                <section class="score-cards" id="score-card-6">
+                    <section class="score-cards-numbers">
+                        <p id="sc-rank-6">Rank</p>
+                    </section>
+                    <section class="score-cards-text">
+                        <section class="score-cards-text-time">
+                            <p id="sc-time-6">Time</p>
+                        </section>
+                        <section class="score-cards-text-moves-star">
+                            <p id="sc-moves-6" class="first-p">Moves</p>
+                            <p id="sc-stars-6" class="second-p">
+                                <span></span>&nbsp;
+                                <span></span>&nbsp;
+                                <span></span>
+                            </p>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+</body>
+
+</html>

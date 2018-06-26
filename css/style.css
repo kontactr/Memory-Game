@@ -1,0 +1,1122 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome|zocial);
+/* zocial */
+
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
+/* fontawesome */
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+#zIndexStarter {
+  position: absolute;
+  width: 100%;
+  height: 690px;
+  background-color: white;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+#game-header {
+  width: 50%;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid teal;
+  background: #24292e;
+  border-radius: 25px;
+}
+
+#game-title {
+  width: 100%;
+  height: 150px;
+  background: #fd7b52;
+  border-radius: 23px 23px 0px 0px;
+  font-size: 3em;
+  font-family: 'Dosis', cursive;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-title-div {
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#game-starter {
+  width: 100%;
+  height: 270px;
+  border-radius: 23px 23px 0px 0px;
+}
+
+#game-type-select {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#game-start-type {
+  width: 100%;
+  height: 100px;
+}
+
+#zIndexContainer {
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 0;
+}
+
+#main-game-container {
+  height: auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#score-data {
+  width: 200px;
+  height: 600px;
+  background: #2d3033;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  margin-left: auto;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  margin-bottom: auto;
+  align-items: center;
+}
+
+.score-data-items {
+  width: 100%;
+  height: calc(600px / 4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer {
+  background: #217ca3;
+}
+
+#moves {
+  background: #e29930;
+}
+
+#stars {
+  background: #32384d;
+}
+
+#result-buttons {
+  background: #211f30;
+}
+
+#reset-button {
+  opacity: 1;
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.3em;
+  cursor: pointer;
+}
+
+.score-data-p {
+  color: white;
+  font-size: 2.3em;
+  overflow: hidden;
+}
+
+#zIndexEnd {
+  position: absolute;
+  width: 100%;
+  height: 690px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: -1;
+  overflow: scroll;
+}
+
+.game-type-div {
+  height: 140px;
+  width: calc((100%) / 4);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  cursor: pointer;
+  color: white;
+}
+
+.fontawesome-linkedin {
+  text-decoration: none;
+  color: #217ca3;
+}
+
+.fontawesome-github {
+  text-decoration: none;
+  color: white;
+}
+
+.fontawesome-font {
+  text-decoration: none;
+  color: orangered;
+}
+
+.fontawesome-lightbulb {
+  text-decoration: none;
+  color: yellow;
+}
+
+#game-start-types {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-start-button-div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 70px;
+}
+
+#start-button {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #fd7b52, #24292e);
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5em;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(60%);
+  margin-right: auto;
+  height: auto;
+  margin-top: 2vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  margin-bottom: 2vh;
+  background: linear-gradient(#02ccba, #aa7ecd);
+  border-radius: 25px;
+}
+
+#container-cards {
+  width: 90%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  padding-bottom: 20px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 135px;
+  height: 135px;
+  margin-left: 15px;
+  margin-right: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  position: relative;
+
+  perspective: 500px;
+}
+
+.class-li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: transform 2s;
+  background-color: #2e3d49;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.class-i {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: transform 2s;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateX(-180deg);
+  border-radius: 10px;
+  background-color: teal;
+  font-size: 2.7em;
+  color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: none;
+}
+
+#score-header {
+  margin-top: 50px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#score-cards-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.score-cards {
+  width: 350px;
+  height: 170px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 20px;
+  font-size: 2em;
+  color: white;
+}
+
+#score-card-1 {
+  margin-right: 20px;
+  background-color: #063852;
+  order: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#score-card-2 {
+  margin-right: 20px;
+  background-color: #304040;
+  order: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#score-card-3 {
+  margin-right: 20px;
+  background-color: #2d4262;
+  order: 3;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#score-card-4 {
+  margin-right: 20px;
+  background-color: #626d71;
+  order: 4;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#score-card-5 {
+  margin-right: 20px;
+  background-color: #486b00;
+  order: 5;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#score-card-6 {
+  margin-right: 20px;
+  background-color: #db9501;
+  order: 6;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.score-cards-numbers {
+  height: 100%;
+  width: 100px;
+  transition: background-color 2s linear;
+  border-radius: 15px 0px 0px 15px;
+  background-position: left;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.score-cards:hover .score-cards-numbers {
+  background-color: purple;
+  background-position: right;
+}
+
+.score-cards-text {
+  height: 100%;
+  width: 250px;
+  background-color: #217ca3;
+  border-radius: 0px 15px 15px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.score-cards-text-time {
+  height: 100px;
+  width: 100%;
+  background-color: #24292e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 15px 0px 0px;
+}
+
+.score-cards-text-moves-star {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: tomato;
+  border-radius: 0px 0px 15px 0px;
+}
+
+.score-cards-text-moves-star p {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-cards-text-moves-star .first-p {
+  width: 40%;
+}
+
+.score-cards-text-moves-star .second-p {
+  width: 60%;
+}
+
+#trophy-icon {
+  width: 50%;
+  height: 100%;
+  font-size: 3.2em;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 2s ease;
+  opacity: 0;
+}
+
+@keyframes rotate-zero {
+  from {
+    transform: rotateX(-180deg);
+  }
+  to {
+    transform: rotateX(-0deg);
+  }
+}
+
+@keyframes rotate-oeg {
+  from {
+    transform: rotateX(-0deg);
+  }
+  to {
+    transform: rotateX(-180deg);
+  }
+}
+
+@keyframes rotate-tsix {
+  from {
+    transform: rotateX(-180deg);
+  }
+  to {
+    transform: rotateX(-360deg);
+  }
+}
+
+@keyframes rotate-oeg-fi {
+  from {
+    transform: rotateX(-360deg);
+  }
+  to {
+    transform: rotateX(-180deg);
+  }
+}
+
+@keyframes background-color-transition {
+  from {
+    background: linear-gradient(#02ccba, #aa7ecd);
+  }
+  25% {
+    background: linear-gradient(#02ccba, #02ccba, #aa7ecd, #aa7ecd);
+  }
+  50% {
+    background: linear-gradient(#02ccba, #aa7ecd, #02ccba, #aa7ecd);
+  }
+  75% {
+    background: linear-gradient(#aa7ecd, #aa7ecd, #02ccba, #02ccba);
+  }
+  100% {
+    background: linear-gradient(#aa7ecd, #02ccba);
+  }
+}
+
+.shake {
+  animation-duration: 2s;
+}
+
+/*  Media Goes Here   */
+
+@media screen and (max-width: 419px) {
+  #score-data {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    order: -1;
+  }
+
+  .score-data-items {
+    height: 60px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0.7em;
+  }
+
+  #container {
+    width: 100%;
+  }
+  #container-cards {
+    width: 95%;
+  }
+
+  .card {
+    width: 23.5vw;
+    height: 23.5vw;
+    font-size: 0.7em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 420px) and (max-width: 490px) {
+  #score-data {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    order: -1;
+  }
+
+  .score-data-items {
+    height: 75px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  #container {
+    width: 100%;
+  }
+  #container-cards {
+    width: 93%;
+  }
+
+  .card {
+    width: 17vw;
+    height: 17vw;
+    font-size: 0.8em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*  Main Container  */
+}
+
+@media screen and (min-width: 491px) and (max-width: 680px) {
+  #main-game-container {
+    width: 95%;
+  }
+
+  #score-data {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    order: -1;
+  }
+
+  .score-data-items {
+    height: 100px;
+    overflow: hidden;
+    width: 50%;
+    font-size: 0.8em;
+  }
+
+  #container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #container-cards {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 18.5vw;
+    height: 18.5vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 960px) {
+  #main-game-container {
+    width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #score-data {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    order: -1;
+  }
+
+  .score-data-items {
+    height: 100px;
+    overflow: hidden;
+    width: 50%;
+    font-size: 0.9em;
+  }
+
+  #container,
+  #container-cards {
+    width: 100%;
+  }
+
+  .card {
+    width: 127px;
+    height: 127px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1000px) {
+  #main-game-container {
+    width: calc(90%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #score-data {
+    margin-top: 5px;
+    width: 200px;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    order: -1;
+  }
+
+  .score-data-items {
+    height: 150px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 1.1em;
+  }
+
+  #container {
+    width: calc(100% - 200px);
+  }
+
+  #container-cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 130px;
+    height: 130px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  #main-game-container {
+    width: calc(890px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #score-data {
+    margin-top: 5px;
+    width: 200px;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    order: -1;
+  }
+
+  .score-data-items {
+    height: 150px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 1.1em;
+  }
+
+  #container {
+    width: calc(100% - 200px);
+  }
+
+  #container-cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 130px;
+    height: 130px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #game-header,
+  #game-title,
+  #game-starter {
+    width: 100%;
+  }
+
+  #game-title-div {
+    justify-content: center;
+    font-size: 1em;
+    text-align: center;
+  }
+  /*          Main Container  */
+  #score-data {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    order: -1;
+  }
+
+  /*  Main Container  */
+
+  #score-header {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-cards-container {
+    height: auto;
+    width: 100%;
+  }
+
+  .score-cards {
+    width: 100%;
+    height: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  #score-card-1 {
+    background-color: #063852;
+    order: 1;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-2 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #304040;
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-3 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2d4262;
+    order: 3;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-4 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #626d71;
+    order: 4;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-5 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #486b00;
+    order: 5;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-6 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #db9501;
+    order: 6;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .score-cards-numbers {
+    width: 70px;
+  }
+
+  .score-cards-text {
+    width: calc(100% - 70px);
+  }
+}
+
+@media screen and (min-width: 431px) and (max-width: 600px) {
+  #game-header,
+  #game-title,
+  #game-starter {
+    width: 100%;
+  }
+
+  #game-title-div {
+    justify-content: center;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  #score-header {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-cards-container {
+    height: auto;
+    width: 410px;
+  }
+
+  .score-cards {
+    width: 100%;
+    height: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-1 {
+    background-color: #063852;
+    order: 1;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-2 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #304040;
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-3 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2d4262;
+    order: 3;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-4 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #626d71;
+    order: 4;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-5 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #486b00;
+    order: 5;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-card-6 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #db9501;
+    order: 6;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .score-cards-numbers {
+    width: 70px;
+  }
+
+  .score-cards-text {
+    width: calc(410px - 70px);
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  #game-header,
+  #game-title,
+  #game-starter {
+    width: 600px;
+  }
+
+  #game-title-div {
+    justify-content: center;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  #score-header {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-cards-container {
+    height: auto;
+    width: 100%;
+  }
+
+  .score-cards {
+    width: calc((100% - 40px) / 2);
+    height: 170px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .score-cards-numbers {
+    width: 70px;
+  }
+
+  .score-cards-text {
+    width: calc(100% - 70px);
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1369px) {
+  #game-header,
+  #game-title,
+  #game-starter {
+    width: 600px;
+  }
+
+  #game-title-div {
+    justify-content: center;
+    font-size: 1.7em;
+    text-align: center;
+  }
+
+  #score-header {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-cards-container {
+    height: auto;
+    width: 950px;
+  }
+
+  .score-cards {
+    width: calc((100% - 40px) / 2);
+    height: 170px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .score-cards-numbers {
+    width: 100px;
+  }
+
+  .score-cards-text {
+    width: calc(100% - 100px);
+  }
+}
+
+@media screen and (min-width: 1350px) and (max-width: 1600px) {
+  #game-header,
+  #game-title,
+  #game-starter {
+    width: 600px;
+  }
+
+  #game-title-div {
+    justify-content: center;
+    font-size: 1.7em;
+    text-align: center;
+  }
+
+  #score-header {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-cards-container {
+    height: auto;
+    width: 100%;
+  }
+
+  .score-cards {
+    width: calc((90% - 0px) / 3);
+    height: 170px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 2em;
+    margin-bottom: 30px;
+    margin-left: auto;
+  }
+
+  .score-cards-numbers {
+    width: 100px;
+  }
+
+  .score-cards-text {
+    width: calc(100% - 100px);
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  #score-header {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #score-cards-container {
+    height: auto;
+    width: 1601;
+    margin-left: auto;
+    margin-bottom: auto;
+  }
+
+  .score-cards {
+    width: calc((90% - 0px) / 3);
+    height: 170px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 2em;
+    margin-bottom: 30px;
+    margin-left: auto;
+  }
+
+  .score-cards-numbers {
+    width: 100px;
+  }
+
+  .score-cards-text {
+    width: calc(100% - 100px);
+  }
+}
