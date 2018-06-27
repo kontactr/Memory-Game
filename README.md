@@ -42,8 +42,7 @@ for card shuffle. for this project if user won the game instead of giving them p
 
 * 3 stars = less than 30 moves
 * 2 stars = less than 45 moves
-* 1 stars = less than 60 moves
-* 0 stars = greater than 60 moves
+* 1 star = greater than or equal 45 moves
 
 
 # About Code

@@ -647,14 +647,7 @@ $(function() {
             $(this).css("visibility", "hidden");
             $(this).removeClass("animated fadeout");
           });
-        } else if (moves === 60) {
-          starOne.addClass("animated fadeOut");
-          starOne.one(animationEnd, function(e) {
-            e.stopPropagation();
-            $(this).css("visibility", "hidden");
-            $(this).removeClass("animated fadeout");
-          });
-        }
+        } 
         /************************************************ */
 
         /**  First Step of Game transition  ******************
@@ -802,9 +795,7 @@ $(function() {
                         formatedTimeMinutes + " : " + formatedTimeSeconds;
                       let movesData = moves;
                       let starsData = 3;
-                      if (moves >= 60) {
-                        starsData = 0;
-                      } else if (moves >= 45) {
+                      if (moves >= 45) {
                         starsData = 1;
                       } else if (moves >= 30) {
                         starsData = 2;
